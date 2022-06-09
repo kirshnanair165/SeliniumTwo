@@ -1,15 +1,17 @@
 package org.example;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
 
-public class ComputerProductPage extends Utils{
+public class ComputerProductPage extends Utils
+{
 
-    public void ClickOnNDesktopProdcutButton(){
-        diverWaitUrl(20,"https://demo.nopcommerce.com/computers");
+    private By _DesktopProdcut = By.xpath("//ul[@class=\"sublist\"]/li[1]/a");
+
+    public void ClickOnNDesktopProdcutButton()
+    {
         //selecting the required product from the sublist category
-        ClicableElement(By.xpath("//ul[@class=\"sublist\"]/li[1]/a"));
-
-
+        ClicableElement(_DesktopProdcut);
 
     }
 }

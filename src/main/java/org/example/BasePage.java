@@ -2,8 +2,7 @@ package org.example;
 
 import org.openqa.selenium.WebDriver;
 
-public class BasePage {
-
+public class BasePage
+{
     protected static WebDriver driver;
-
 }

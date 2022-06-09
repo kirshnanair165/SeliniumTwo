@@ -7,9 +7,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
 
-public class DriverManger extends Utils {
+public class DriverManger extends Utils
+{
+LoadProp loadProp=new LoadProp();
 
-    String browserName = "edge";
+    String browserName = loadProp.getProperty("browserName");
     public void openBrowser() {
 
         if(browserName.equalsIgnoreCase("Chrome")){
@@ -34,7 +36,7 @@ public class DriverManger extends Utils {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
 
-        driver.get("https://demo.nopcommerce.com/");
+        driver.get(loadProp.getProperty("url"));
     }
 
     public void closeBrowser()

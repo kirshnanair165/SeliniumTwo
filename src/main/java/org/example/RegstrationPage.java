@@ -3,40 +3,51 @@ package org.example;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 
-public class RegstrationPage extends Utils{
+public class RegstrationPage extends Utils {
+    LoadProp loadProp = new LoadProp();
+    private By _gender = By.xpath("//input [@id=\"gender-male\"]");
+    private By _firstName = By.xpath("//input[@name='FirstName']");
+    private By _lastName = By.id("LastName");
+    private By _dateOfBirthDay = By.xpath("//select[@name=\"DateOfBirthDay\"]");
+    private By _dateOfBirthMonth = By.xpath("//select[@name=\"DateOfBirthMonth\"]");
+    private By _dateOfBirthYear = By.xpath("//select[@name=\"DateOfBirthYear\"]");
+    private By _emailId = By.id("Email");
+    private By _password = By.id("Password");
+    private By _confirmPassword = By.id("ConfirmPassword");
+    private By _clickRegister = By.id("register-button");
 
-    public void userEnterRegstationDeatiles (){
+    public void userEnterRegstationDeatiles() {
+
+
         // select male and female
-        ClicableElement(By.xpath("//input [@id=\"gender-male\"]"));
+        ClicableElement(_gender);
 
         //driver.findElement(By.xpath("//input[@name='FirstName']")).sendKeys("Autoamtion");
-        findelemnt(By.xpath("//input[@name='FirstName']"),"Autommation");
+        inputText(_firstName, loadProp.getProperty("Firstname"));
 
         //driver.findElement(By.id("LastName")).sendKeys("LastName");
-        findelemnt(By.id("LastName"),"Lastname");
-        //String= "your reagstration is complect"
+        inputText(_lastName, loadProp.getProperty("LastName"));
 
         //Added date of birth
 //
-        Select birthday = new Select(driver.findElement(By.xpath("//select[@name=\"DateOfBirthDay\"]")));
-        birthday.selectByValue("31");
-        Select birthmonth = new Select((driver.findElement(By.xpath("//select[@name=\"DateOfBirthMonth\"]"))));
-        birthmonth.selectByVisibleText("May");
-        Select brithyear = new Select(driver.findElement(By.xpath("//select[@name=\"DateOfBirthYear\"]")));
-        brithyear.selectByVisibleText("1985");
+        Select birthday = new Select(driver.findElement(_dateOfBirthDay));
+        birthday.selectByValue(loadProp.getProperty("dobDay"));
+        Select birthmonth = new Select(driver.findElement(_dateOfBirthMonth));
+        birthmonth.selectByVisibleText(loadProp.getProperty("dobMonth"));
+        Select brithyear = new Select(driver.findElement(_dateOfBirthYear));
+        brithyear.selectByVisibleText(loadProp.getProperty("dobYear"));
 
-        //driver.findElement(By.id("Email")).sendKeys("abcd" + randomdate() + "@gmail.com");
-        findelemnt(By.id("Email"),"abcd" + randomdate() + "@gmail.com");
+        //Enter te email Id
+        inputText(_emailId, (loadProp.getProperty("emailFistPart") + randomdate() + loadProp.getProperty("emailSecondPart")));
 
         //driver.findElement(By.id("Password")).sendKeys("abc123");
-        findelemnt(By.id("Password"),"abc123");
+        inputText(_password, loadProp.getProperty("Password"));
 
         //driver.findElement(By.id("ConfirmPassword")).sendKeys("abc123");
-        findelemnt(By.id("ConfirmPassword"),"abc123");
+        inputText(_confirmPassword, loadProp.getProperty("ConfirmPasword"));
 
         //driver.findElement(By.id("")).click();
-        ClicableElement(By.id("register-button"));
-
+        ClicableElement(_clickRegister);
 
 
     }

@@ -35,12 +35,23 @@ public class Utils extends BasePage {
 
     }
 
-    public static void findelemnt(By by, String text)
+    public static void inputText(By by, String text)
     {
         driver.findElement(by).sendKeys(text);
     }
+
+   public static void searchProdcut(By by,String text,By by1) {
+
+   }
+
     public static void ClicableElement(By by){
         driver.findElement(by).click();
+    }
+    public static void threadSleep(int time){
+        try {
+            Thread.sleep(time);
+        } catch (InterruptedException e) {
+        }
     }
 
     public static void driverWaitelementToBeClickable(int time,By by)
