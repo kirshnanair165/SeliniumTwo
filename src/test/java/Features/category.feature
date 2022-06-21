@@ -1,4 +1,4 @@
-@test2
+@smoke2
 Feature: Category selection
 
   Scenario Outline: User should able to navigate to desire category page successfully form top header menu

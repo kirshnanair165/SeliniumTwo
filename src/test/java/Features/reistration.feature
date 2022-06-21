@@ -1,4 +1,4 @@
-@test1
+@smoke1
 
 Feature: Registration
 Scenario: As a user,I should able to register successfully,so i can use all the features on the DemoNopCommerce website
