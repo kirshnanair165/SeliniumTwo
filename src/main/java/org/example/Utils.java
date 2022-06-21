@@ -6,6 +6,8 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -78,6 +80,11 @@ public class Utils extends BasePage {
     {
         WebDriverWait wait= new WebDriverWait(driver,Duration.ofSeconds(time));
         wait.until(ExpectedConditions.urlToBe(""));
+    }
+    //veriy the URL reusable method
+    public static void verifyCurrentUrl(String Url){
+        Assert.assertEquals(driver.getCurrentUrl(),Url);
+
     }
 
 
