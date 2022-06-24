@@ -20,18 +20,13 @@
 
 
   <dependencies>
-
-
-
-    <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
     <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
       <version>7.5</version>
       <scope>test</scope>
     </dependency>
-
-
     <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
@@ -76,16 +71,12 @@
       <version>7.3.4</version>
     </dependency>
 
-
-
-
     <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
       <version>7.6.0</version>
       <scope>compile</scope>
     </dependency>
-
 
   </dependencies>
 

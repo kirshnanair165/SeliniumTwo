@@ -1,7 +1,6 @@
 package org.example;
 
 import org.openqa.selenium.By;
-import org.testng.Assert;
 
 public class ComputerProductPage extends Utils
 {

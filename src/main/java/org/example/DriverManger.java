@@ -24,15 +24,18 @@ LoadProp loadProp=new LoadProp();
     boolean cloud= Boolean.parseBoolean(System.getProperty("cloud"));
 
     String browserName = loadProp.getProperty("browserName");
-    public void openBrowser() {
+    public void openBrowser()
+    {
         //making decision cloud true or false
         //this will be run if cloud true (In cloud)
-        if (cloud) {
+        if (cloud)
+        {
 
             System.out.println(" running in cloud");
 
             //applying conditional loop for different browser options
-            if (browserName.equalsIgnoreCase("Chrome")) {
+            if (browserName.equalsIgnoreCase("Chrome"))
+            {
 
                 caps.setCapability("browserName", "Chrome");
                 caps.setCapability("browserVersion", "latest");
@@ -42,7 +45,8 @@ LoadProp loadProp=new LoadProp();
                 caps.setCapability("bstack:options", browserstackOptions);
 
             }
-            if (browserName.equalsIgnoreCase("firefox")) {
+            if (browserName.equalsIgnoreCase("firefox"))
+            {
 
                 System.out.println("Your test cases are running in Firefox browser");
                 caps.setCapability("os", "Windows");
@@ -52,7 +56,8 @@ LoadProp loadProp=new LoadProp();
                 caps.setCapability("browserstack.local", "false");
                 caps.setCapability("browserstack.selenium_version", "4.1.0");
             }
-            if (browserName.equalsIgnoreCase("edge")) {
+            if (browserName.equalsIgnoreCase("edge"))
+            {
                 System.out.println("your test cases running in Edge browser");
                 caps.setCapability("os", "Windows");
                 caps.setCapability("os_version", "10");
@@ -71,7 +76,8 @@ LoadProp loadProp=new LoadProp();
             }
 
 
-        } else {
+        } else
+        {
 
             if (browserName.equalsIgnoreCase("Chrome")) {
                 System.setProperty("webdriver.chrome.driver", "src/test/java/Drivers/chromedriver.exe");
@@ -94,7 +100,6 @@ LoadProp loadProp=new LoadProp();
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
-
         driver.get(loadProp.getProperty("url"));
     }
 
